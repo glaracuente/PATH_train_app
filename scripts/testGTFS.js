@@ -104,10 +104,25 @@ gtfs
   });
   */
 
+/* GET SCHEDULE NAMES AND SERVICE_IDS 
 gtfs.getCalendars({}, {}).then(calendar => {
   calendar.forEach(function(cal) {
     console.log(cal.service_name);
     console.log(cal.service_id);
+  });
+  return mongoose.connection.close();
+});
+*/
+
+gtfs.getRoutes({}, {}).then(routes => {
+  routes.forEach(function(route) {
+    routeName = route.route_long_name;
+    if (!routeName.includes("Route")) {
+      SideA = routeName.split(" - ")[0];
+      SideB = routeName.split(" - ")[1];
+      console.log(SideA + " -> " + SideB);
+      console.log(SideA + " <- " + SideB);
+    }
   });
   return mongoose.connection.close();
 });

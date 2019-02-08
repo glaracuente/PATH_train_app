@@ -3,7 +3,7 @@ import DropDown from "../components/DropDown";
 
 class Schedule extends Component {
   state = {
-    stations: ["Hoboken to 33rd", "WTC to JSQ", "NWK to WTC"],
+    stations: ["Hoboken", "Christopher", "9th", "14th", "23rd", "33rd"],
     currentStation: "",
     destinationStation: "",
     day: ""
@@ -17,7 +17,8 @@ class Schedule extends Component {
   render() {
     return (
       <div>
-        <DropDown title="Route" stations={this.state.stations} />
+        <DropDown title="Current Station" stations={this.state.stations} />
+        <DropDown title="Destination" stations={this.state.stations} />
       </div>
     );
   }

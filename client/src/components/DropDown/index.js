@@ -6,12 +6,11 @@ import "./style.css";
 
 class DropDown extends Component {
   state = {
-    btnTitle: "Current Station"
+    btnTitle: this.props.title
   };
 
   handleClick = event => {
     event.preventDefault();
-    console.log(event);
     this.setState({ btnTitle: event.target.innerText });
   };
 
