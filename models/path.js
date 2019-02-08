@@ -21,4 +21,4 @@ gtfs.getCalendars({}, {}).then(calendar => {
   return mongoose.connection.close();
 });
 
-module.exports = Path;
+//module.exports = Path;

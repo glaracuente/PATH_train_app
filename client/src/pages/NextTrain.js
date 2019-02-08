@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import DropDown from "../components/DropDown";
+import { Container, Row, Col } from "react-bootstrap";
 
-class Schedule extends Component {
+class NextTrain extends Component {
   state = {
     stations: ["Hoboken", "Christopher", "9th", "14th", "23rd", "33rd"],
     currentStation: "",
@@ -17,11 +18,22 @@ class Schedule extends Component {
   render() {
     return (
       <div>
-        <DropDown title="Current Station" stations={this.state.stations} />
-        <DropDown title="Destination" stations={this.state.stations} />
+        <Container>
+          <Row>
+            <Col xs={6} md={6}>
+              <DropDown
+                title="Current Station"
+                stations={this.state.stations}
+              />
+            </Col>
+            <Col xs={6} md={6}>
+              <DropDown title="Destination" stations={this.state.stations} />
+            </Col>
+          </Row>
+        </Container>
       </div>
     );
   }
 }
 
-export default Schedule;
+export default NextTrain;
