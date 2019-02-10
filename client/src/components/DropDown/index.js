@@ -10,6 +10,7 @@ class DropDown extends Component {
   handleClick = event => {
     event.preventDefault();
     this.setState({ btnTitle: event.target.innerText });
+    this.props.onUpdate(event.target.innerText);
   };
 
   render() {

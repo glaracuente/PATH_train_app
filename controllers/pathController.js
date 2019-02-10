@@ -3,6 +3,10 @@ const gtfs = require("gtfs");
 module.exports = {
   getTimes: function(req, res) {
     let routeid = req.params.routeid;
+
+    if (parseInt(routeid) < 100) {
+      res.json([["Hello"], ["World"]]);
+    }
     let result = [];
     gtfs
       .getStops({

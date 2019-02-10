@@ -23,26 +23,31 @@ class Schedule extends Component {
       "Newark <- World Trade Center"
     ],
 
-    day: "",
+    routeid: "77",
     timelist: []
   };
 
-  updateTimeList = () => {
-    console.log("UPDATE LIST");
-    //NEED ROUTEID, DIRECTION
+  updateTimeList = routeText => {
+    console.log(routeText);
+    this.setState({ routeid: "859" });
+
+    this.renderSchedules(); // this happens too late because of race condition
   };
 
-  consoleTimes = () => {
-    API.getTimes("860")
+  renderSchedules = () => {
+    console.log("renderSchedules");
+    API.getTimes(this.state.routeid)
       .then(res => this.setState({ timelist: res.data }))
       .catch(err => console.log(err));
   };
 
   componentDidMount() {
-    this.consoleTimes();
+    console.log("didMount");
+    this.renderSchedules();
   }
 
   render() {
+    console.log("render");
     return (
       <div>
         <DropDown
