@@ -13,10 +13,10 @@ function App() {
       <div>
         <Container>
           <Row>
-            <Col xs={12} md={12}>
+            <Col>
               <Navi />
               <Row>
-                <Col xs={6} md={6}>
+                <Col>
                   <Switch>
                     <Route exact path="/" component={NextTrain} />
                     <Route exact path="/schedule" component={Schedule} />

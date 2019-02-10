@@ -29,6 +29,7 @@ class Schedule extends Component {
 
   updateTimeList = () => {
     console.log("UPDATE LIST");
+    //NEED ROUTEID, DIRECTION
   };
 
   consoleTimes = () => {

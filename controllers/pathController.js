@@ -1,58 +1,43 @@
-const db = require("../models");
 const gtfs = require("gtfs");
 
 module.exports = {
   getTimes: function(req, res) {
+    let result = [];
     gtfs
-      .getStoptimes(
-        {
-          agency_key: "path",
-          stop_id: "781741",
-          route_id: "859",
-          service_id: "c_16420_b_18244_d_31",
-          direction_id: 0
-        },
-        {
-          _id: 0
-        },
-        {
-          sort: { stop_id: 1 }
-        }
-      )
-      .then(stoptimes => {
-        let result = [];
-        stoptimes.forEach(function(stoptime) {
-          result.push(stoptime.arrival_time);
-        });
-        res.json(result);
+      .getStops({
+        agency_key: "path",
+        route_id: "860", //Hoboken - World Trade Center
+        //route_id: "859", // route_long_name is Hoboken - 33rd Street
+        direction_id: 1 //0 - 33rd to hoboken 1 -  hoboken to 33rd (0 means reverse of long_name)
       })
-      .catch(err => res.status(422).json(err));
-  },
-  findAll: function(req, res) {
-    db.Book.find(req.query)
-      .sort({ date: -1 })
-      .then(dbModel => res.json(dbModel))
-      .catch(err => res.status(422).json(err));
-  },
-  findById: function(req, res) {
-    db.Book.findById(req.params.id)
-      .then(dbModel => res.json(dbModel))
-      .catch(err => res.status(422).json(err));
-  },
-  create: function(req, res) {
-    db.Book.create(req.body)
-      .then(dbModel => res.json(dbModel))
-      .catch(err => res.status(422).json(err));
-  },
-  update: function(req, res) {
-    db.Book.findOneAndUpdate({ _id: req.params.id }, req.body)
-      .then(dbModel => res.json(dbModel))
-      .catch(err => res.status(422).json(err));
-  },
-  remove: function(req, res) {
-    db.Book.findById({ _id: req.params.id })
-      .then(dbModel => dbModel.remove())
-      .then(dbModel => res.json(dbModel))
+      .then(stops => {
+        stops.forEach(function(stop) {
+          console.log(stop.stop_name + ": " + stop.stop_id);
+          gtfs
+            .getStoptimes({
+              agency_key: "path",
+              stop_id: stop.stop_id,
+              route_id: "860"
+              //service_id: "c_16420_b_18244_d_31" //weekdays
+            })
+            .then(stoptimes => {
+              current = [];
+              stoptimes.forEach(function(stoptime) {
+                current.push(stoptime.arrival_time);
+              });
+              current = current.reverse();
+              current.unshift(stop.stop_name);
+              current.unshift(stop.stop_id);
+
+              result.push(current);
+
+              if (result.length === 4) {
+                res.json(result);
+              }
+            })
+            .catch(err => res.status(422).json(err));
+        });
+      })
       .catch(err => res.status(422).json(err));
   }
 };
