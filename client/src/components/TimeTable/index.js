@@ -4,7 +4,6 @@ import { Container, Row } from "react-bootstrap";
 
 class TimeTable extends Component {
   render() {
-    console.log(this.props.timelist);
     return (
       <>
         <Container>

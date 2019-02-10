@@ -33,7 +33,7 @@ class Schedule extends Component {
   };
 
   consoleTimes = () => {
-    API.getTimes()
+    API.getTimes("860")
       .then(res => this.setState({ timelist: res.data }))
       .catch(err => console.log(err));
   };
