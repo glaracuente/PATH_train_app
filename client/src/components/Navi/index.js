@@ -9,7 +9,7 @@ function Navi() {
         <Nav className="mr-auto">
           <Nav.Link href="/">Catch Next Train</Nav.Link>
           <Nav.Link href="/schedule">Path Schedule</Nav.Link>
-          <Nav.Link href="/">Map and Fare Info</Nav.Link>
+          <Nav.Link href="/mapfares">Map and Fare Info</Nav.Link>
           <Nav.Link href="/">Alerts</Nav.Link>
         </Nav>
       </Navbar>

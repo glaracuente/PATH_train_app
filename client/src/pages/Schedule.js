@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import DropDown from "../components/DropDown";
-import Img from "../components/Img";
+import TimeTable from "../components/TimeTable";
+import API from "../utils/API";
+//import { Container, Row, Col } from "react-bootstrap";
 
 class Schedule extends Component {
   state = {
@@ -21,21 +23,33 @@ class Schedule extends Component {
       "Newark <- World Trade Center"
     ],
 
-    currentStation: "",
-    destinationStation: "",
-    day: ""
+    day: "",
+    timelist: []
   };
 
-  /*componentDidMount() {
-    this.setState({ book: times });
-    console.log(this.state.book);
-  }*/
+  updateTimeList = () => {
+    console.log("UPDATE LIST");
+  };
+
+  consoleTimes = () => {
+    API.getTimes()
+      .then(res => this.setState({ timelist: res.data }))
+      .catch(err => console.log(err));
+  };
+
+  componentDidMount() {
+    this.consoleTimes();
+  }
 
   render() {
     return (
       <div>
-        <DropDown title="Route" stations={this.state.stations} />
-        <Img />
+        <DropDown
+          title="Route"
+          stations={this.state.stations}
+          onUpdate={this.updateTimeList}
+        />
+        <TimeTable timelist={this.state.timelist} />
       </div>
     );
   }
