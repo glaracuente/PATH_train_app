@@ -5,9 +5,13 @@ class StationTimeColumn extends Component {
   render() {
     return (
       <>
-        <Col md={1}>
+        <Col>
           {this.props.stationColumn.map((timeentry, i) => {
-            return <Row key={i}>{timeentry}</Row>;
+            return (
+              <>
+                <Row key={i}>{timeentry}</Row> <Row />
+              </>
+            );
           })}
         </Col>
       </>
