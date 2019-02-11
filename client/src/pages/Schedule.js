@@ -47,7 +47,7 @@ class Schedule extends Component {
 
   componentDidMount() {
     console.log("didMount");
-    this.renderSchedules("77");
+    this.renderSchedules("77", 0);
   }
 
   render() {

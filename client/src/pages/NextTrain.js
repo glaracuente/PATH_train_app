@@ -10,6 +10,10 @@ class NextTrain extends Component {
     day: ""
   };
 
+  updateTimeList = routeText => {
+    console.log(routeText);
+  };
+
   /*componentDidMount() {
     this.setState({ book: times });
     console.log(this.state.book);
@@ -24,10 +28,15 @@ class NextTrain extends Component {
               <DropDown
                 title="Current Station"
                 stations={this.state.stations}
+                onUpdate={this.updateTimeList}
               />
             </Col>
             <Col xs={6} md={6}>
-              <DropDown title="Destination" stations={this.state.stations} />
+              <DropDown
+                title="Destination"
+                stations={this.state.stations}
+                onUpdate={this.updateTimeList}
+              />
             </Col>
           </Row>
         </Container>

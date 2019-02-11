@@ -7,8 +7,17 @@ const MapFares = () => {
     <div>
       <Container>
         <Row>
-          <Col xs={12} md={12}>
-            <Img src="nyc-path-map.png" />
+          <Col>
+            <br />
+            <h3>
+              PATH’s World Trade Center Station will be closed weekends
+              beginning January 5, 2019, through December 20, 2020, excluding
+              major holidays, from 12:01 a.m. on Saturdays until 5 a.m. on
+              Mondays.
+            </h3>
+            <br />
+
+            <Img src="nyc-path-map.jpg" />
           </Col>
         </Row>
       </Container>
