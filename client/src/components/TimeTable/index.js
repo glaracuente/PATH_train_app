@@ -8,7 +8,7 @@ class TimeTable extends Component {
       <>
         <Container>
           <Row>
-            {this.props.timelist.sort().map((timeArray, i) => {
+            {this.props.timelist.map((timeArray, i) => {
               return (
                 <StationTimeColumn
                   key={i}

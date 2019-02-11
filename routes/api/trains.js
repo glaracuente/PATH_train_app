@@ -3,7 +3,7 @@ const pathController = require("../../controllers/pathController");
 
 router
   //matches with /api/times
-  .route("/:routeid")
+  .route("/:routeid/:dir")
   .get(pathController.getTimes);
 
 /*router
