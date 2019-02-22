@@ -1,6 +1,26 @@
 const gtfs = require("gtfs");
+const mongoose = require("mongoose");
+const Schema = mongoose.Schema;
+
+const historySchema = new Schema({
+  user: { type: String, required: true },
+  route: { type: String, required: true },
+  dir: { type: String, required: true }
+});
+
+const History = mongoose.model("History", historySchema);
 
 module.exports = {
+  saveLastRoute: function(req, res) {
+    History.create({
+      user: "gerry@aol.com",
+      route: req.params.routeid,
+      dir: req.params.dir
+    })
+      .then(dbModel => res.json(dbModel))
+      .catch(err => res.status(422).json(err));
+  },
+
   getTimes: function(req, res) {
     let routeid = req.params.routeid;
     let dir = req.params.dir;

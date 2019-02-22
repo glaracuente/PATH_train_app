@@ -43,6 +43,10 @@ class Schedule extends Component {
     API.getTimes(routeid, dir)
       .then(res => this.setState({ timelist: eval(`res.data.${myvar}`) }))
       .catch(err => console.log(err));
+
+    API.postLastRoute(routeid, dir)
+      .then(res => console.log(res))
+      .catch(err => console.log(err));
   };
 
   componentDidMount() {

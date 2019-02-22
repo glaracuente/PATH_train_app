@@ -7,17 +7,9 @@ const config = {
 
 mongoose.connect(config.mongoUrl, { useNewUrlParser: true });
 
-/*
-const mongoose = require("mongoose");
 const db = require("../models");
-const gtfs = require("gtfs");
 
-
-mongoose.connect(
-  process.env.MONGODB_URI ||
-  "mongodb://localhost/reactreadinglist"
-);
-*/
+db.getCollection("history").find({});
 
 /*
 gtfs
@@ -113,7 +105,7 @@ gtfs.getCalendars({}, {}).then(calendar => {
   return mongoose.connection.close();
 });
 */
-
+/*
 gtfs.getRoutes({}, {}).then(routes => {
   routes.forEach(function(route) {
     routeName = route.route_long_name;
@@ -126,3 +118,4 @@ gtfs.getRoutes({}, {}).then(routes => {
   });
   return mongoose.connection.close();
 });
+*/
