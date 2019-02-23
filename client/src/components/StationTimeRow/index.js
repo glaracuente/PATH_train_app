@@ -1,22 +1,22 @@
 import React, { Component } from "react";
 import { Row, Col } from "react-bootstrap";
 
-class StationTimeColumn extends Component {
+class StationTimeRow extends Component {
   render() {
     return (
       <>
-        <Col>
-          {this.props.stationColumn.map((timeentry, i) => {
+        <Row>
+          {this.props.stationRow.map((timeentry, i) => {
             return (
               <>
-                <Row key={i}>{timeentry}</Row> <Row />
+                <Col key={i}>{timeentry}</Col> <Col />
               </>
             );
           })}
-        </Col>
+        </Row>
       </>
     );
   }
 }
 
-export default StationTimeColumn;
+export default StationTimeRow;
