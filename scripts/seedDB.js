@@ -2,7 +2,7 @@ const gtfs = require("gtfs");
 
 const mongoose = require("mongoose");
 const config = {
-  mongoUrl: "mongodb://localhost:27017/gtfs",
+  mongoUrl: process.env.MONGODB_URI || "mongodb://localhost:27017/gtfs",
   agencies: [
     {
       agency_key: "path",
