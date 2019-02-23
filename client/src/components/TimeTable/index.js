@@ -4,7 +4,6 @@ import { Container, Row } from "react-bootstrap";
 
 class TimeTable extends Component {
   render() {
-    let myarr = [["1"], ["2"]];
     let baseArray = [];
 
     return (

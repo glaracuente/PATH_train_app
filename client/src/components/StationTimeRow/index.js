@@ -14,6 +14,7 @@ class StationTimeRow extends Component {
             );
           })}
         </Row>
+        <Row />
       </>
     );
   }
