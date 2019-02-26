@@ -42,7 +42,7 @@ class Navi extends Component {
             <Nav.Link href="/">Catch Next Train</Nav.Link>
             <Nav.Link href="/schedule">Path Schedule</Nav.Link>
             <Nav.Link href="/mapfares">Map and Fare Info</Nav.Link>
-            <Nav.Link href="/">Alerts</Nav.Link>
+            <Nav.Link href="/alerts">Alerts</Nav.Link>
           </Nav>
           {this.state.isSignedIn ? (
             <span>

@@ -6,6 +6,7 @@ import NoMatch from "./pages/NoMatch";
 import Navi from "./components/Navi";
 import { Container, Row, Col } from "react-bootstrap";
 import MapFares from "./pages/MapFares";
+import Alerts from "./pages/Alerts";
 
 class App extends Component {
   render() {
@@ -22,6 +23,7 @@ class App extends Component {
                       <Route exact path="/" component={NextTrain} />
                       <Route exact path="/schedule" component={Schedule} />
                       <Route exact path="/mapfares" component={MapFares} />
+                      <Route exact path="/alerts" component={Alerts} />
                       <Route component={NoMatch} />
                     </Switch>
                   </Col>
