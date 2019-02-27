@@ -1,14 +1,12 @@
 const mongoose = require("mongoose");
+const Schema = mongoose.Schema;
 
-/*
-const bookSchema = new Schema({
-  title: { type: String, required: true },
-  author: { type: String, required: true },
-  synopsis: String,
-  date: { type: Date, default: Date.now }
+const historySchema = new Schema({
+  user: { type: String, required: true },
+  route: { type: String, required: true },
+  dir: { type: String, required: true }
 });
 
-const Book = mongoose.model("Book", bookSchema);
-*/
+const History = mongoose.model("History", historySchema);
 
-//module.exports = Path;
+module.exports = History;

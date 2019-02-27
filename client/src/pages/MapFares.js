@@ -3,6 +3,10 @@ import Img from "react-image";
 import { Container, Row, Col } from "react-bootstrap";
 
 const MapFares = () => {
+  const divStyle = {
+    width: "100%"
+  };
+
   return (
     <div>
       <Container>
@@ -16,8 +20,7 @@ const MapFares = () => {
               Mondays.
             </h3>
             <br />
-
-            <Img src="nyc-path-map.jpg" />
+            <Img style={divStyle} src="nyc-path-map.jpg" />
           </Col>
         </Row>
       </Container>

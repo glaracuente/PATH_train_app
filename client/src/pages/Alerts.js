@@ -1,17 +1,6 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import {
-  TwitterTimelineEmbed,
-  TwitterShareButton,
-  TwitterFollowButton,
-  TwitterHashtagButton,
-  TwitterMentionButton,
-  TwitterTweetEmbed,
-  TwitterMomentShare,
-  TwitterDMButton,
-  TwitterVideoEmbed,
-  TwitterOnAirButton
-} from "react-twitter-embed";
+import { TwitterTimelineEmbed } from "react-twitter-embed";
 
 const Alerts = () => {
   return (

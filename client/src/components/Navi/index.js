@@ -32,6 +32,7 @@ class Navi extends Component {
       console.log("user", user);
     });
   };
+  //            <Nav.Link href="/">Catch Next Train</Nav.Link>
 
   render() {
     return (
@@ -39,7 +40,6 @@ class Navi extends Component {
         {" "}
         <Navbar expand="lg" bg="dark" variant="dark">
           <Nav className="mr-auto">
-            <Nav.Link href="/">Catch Next Train</Nav.Link>
             <Nav.Link href="/schedule">Path Schedule</Nav.Link>
             <Nav.Link href="/mapfares">Map and Fare Info</Nav.Link>
             <Nav.Link href="/alerts">Alerts</Nav.Link>

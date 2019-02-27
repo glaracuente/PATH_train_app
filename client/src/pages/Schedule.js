@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import DropDown from "../components/DropDown";
 import TimeTable from "../components/TimeTable";
 import API from "../utils/API";
+import { Container, Row, Col } from "react-bootstrap";
 
 class Schedule extends Component {
   state = {
@@ -56,14 +57,27 @@ class Schedule extends Component {
 
   render() {
     console.log("render");
+    let divStyle = {
+      width: "100px"
+    };
     return (
       <div>
-        <DropDown
-          title="Route"
-          stations={Object.keys(this.state.stations)}
-          onUpdate={this.updateTimeList}
-        />
-        <TimeTable timelist={this.state.timelist} />
+        <Container>
+          <Row className="mx-auto mr-1 m-3" style={divStyle}>
+            <Col>
+              <DropDown
+                title="Route"
+                stations={Object.keys(this.state.stations)}
+                onUpdate={this.updateTimeList}
+              />
+            </Col>
+          </Row>
+          <Row>
+            <Col>
+              <TimeTable timelist={this.state.timelist} />
+            </Col>
+          </Row>
+        </Container>
       </div>
     );
   }

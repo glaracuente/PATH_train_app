@@ -1,19 +1,10 @@
 const gtfs = require("gtfs");
-const mongoose = require("mongoose");
-const Schema = mongoose.Schema;
-
-const historySchema = new Schema({
-  user: { type: String, required: true },
-  route: { type: String, required: true },
-  dir: { type: String, required: true }
-});
-
-const History = mongoose.model("History", historySchema);
+const db = require("../models/index");
 
 module.exports = {
   saveLastRoute: function(req, res) {
-    History.create({
-      user: "gerry@aol.com",
+    db.Path.create({
+      user: "gerr@aol.com",
       route: req.params.routeid,
       dir: req.params.dir
     })

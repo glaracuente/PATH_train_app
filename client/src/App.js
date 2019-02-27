@@ -20,7 +20,7 @@ class App extends Component {
                 <Row>
                   <Col>
                     <Switch>
-                      <Route exact path="/" component={NextTrain} />
+                      <Route exact path="/" component={Schedule} />
                       <Route exact path="/schedule" component={Schedule} />
                       <Route exact path="/mapfares" component={MapFares} />
                       <Route exact path="/alerts" component={Alerts} />
