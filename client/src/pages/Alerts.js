@@ -9,11 +9,13 @@ const Alerts = () => {
         <Row>
           <Col>
             <br />
+
             <TwitterTimelineEmbed
               sourceType="profile"
               screenName="pathalerts"
               options={{ height: 1000 }}
             />
+
             <br />
           </Col>
         </Row>
