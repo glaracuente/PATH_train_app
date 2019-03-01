@@ -41,7 +41,7 @@ class Navi extends Component {
         <Navbar expand="lg" bg="dark" variant="dark">
           <Nav className="mr-auto">
             <Nav.Link href="/schedule">Path Schedule</Nav.Link>
-            <Nav.Link href="/mapfares">Map and Fare Info</Nav.Link>
+            <Nav.Link href="/mapfares">Map Info</Nav.Link>
             <Nav.Link href="/alerts">Alerts</Nav.Link>
           </Nav>
           {this.state.isSignedIn ? (

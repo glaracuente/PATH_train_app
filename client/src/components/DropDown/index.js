@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { Dropdown, DropdownButton } from "react-bootstrap";
-import "./style.css";
 
 class DropDown extends Component {
   state = {
@@ -16,11 +15,7 @@ class DropDown extends Component {
   render() {
     return (
       <div>
-        <DropdownButton
-          alignRight
-          title={this.state.btnTitle}
-          id="dropdown-menu-align-right"
-        >
+        <DropdownButton title={this.state.btnTitle}>
           {this.props.stations.map(station => (
             <Dropdown.Item key={station} onClick={this.handleClick}>
               {station}
