@@ -13,7 +13,7 @@ function Landing() {
         <Row>
           <Col>
             <br />
-            <Img style={divStyle} src="Landing_image.jpg" />
+            <Img style={divStyle} src="landing-image.jpg" />
           </Col>
         </Row>
       </Container>
