@@ -11,4 +11,4 @@ Try it out at: https://salty-ocean-94125.herokuapp.com
 * ExpressJS
 * Firebase
 * MongoDB
-* GTFS
+* GTFS (General Transit Feed Specification )
