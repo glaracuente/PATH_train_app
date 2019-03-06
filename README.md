@@ -1,11 +1,14 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-Tech Stack:
 
-Front End: React
+Try it out at: https://salty-ocean-94125.herokuapp.com
 
-Web Server: NodeJS
+**Technologies Used:**
 
-Routing: ExpressJS
-
-Authentication: Firebase
+* React
+* Bootstrap
+* NodeJS
+* ExpressJS
+* Firebase
+* MongoDB
+* GTFS
